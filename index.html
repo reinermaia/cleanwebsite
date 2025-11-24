@@ -150,23 +150,25 @@
     }
     .mockup-body {
       background:radial-gradient(circle at top,#1e293b 0,#020617 65%);
-      border-radius:14px;
-      padding:18px;
+      border-radius:18px;
+      padding:22px;
       display:grid;
-      grid-template-columns:1.1fr 1fr;
-      gap:14px;
+      grid-template-columns:1.4fr 1fr; /* mais espaço para a imagem */
+      gap:20px;
       align-items:center;
+      min-height:300px; /* garante mais presença visual */
     }
     .machine-block {
       border-radius:12px;
       background:linear-gradient(135deg,#1d4ed8,#22c55e);
-      height:150px;
+      height:260px;
       display:flex;
       align-items:center;
       justify-content:center;
       font-weight:600;
       font-size:0.95rem;
       text-align:center;
+      overflow:hidden; /* permite imagens maiores sem quebrar */
     }
     .mockup-list {
       font-size:12px;
@@ -307,7 +309,7 @@
   <section class="hero">
     <div class="hero-text">
       <div class="hero-kicker">Locação de extratora profissional</div>
-      <h1>Ganhos por dia: R$ 400–800* em serviços</h1>
+      <h1>Ganhos por dia de até R$ 800* em serviços</h1>
       <p class="hero-sub">Alugue a extratora profissional EA262 com seguro incluso e teste o serviço antes de investir pesado em equipamento.</p>
 
       <div class="hero-badges">
@@ -333,7 +335,7 @@
           <div class="machine-block"><img src="images/extratora.jpg" alt="Extratora EA262" style="width:100%; height:auto; border-radius:12px;"></div>
 
           <div class="mockup-list">
-            <div class="mockup-pill">Ganhos por dia: R$ 400–800* em serviços</div>
+            
             <div class="mockup-pill">Aluguel estimado: R$ 90 / dia</div>
             <div class="mockup-pill">Seguro incluso contra furto e avarias</div>
             <span style="font-size:10px; margin-top:4px;">*Valores aproximados, variam por cidade e tipo de cliente.</span>
@@ -420,6 +422,7 @@
 </div>
 </body>
 </html>
+
 
 
 
