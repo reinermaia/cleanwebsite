@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProClean Express - Landing Page</title>
+  <style>
+    :root {
+      --primary:#0b63f3;
+      --primary-dark:#0844aa;
+      --accent:#10b981;
+      --bg-dark:#050816;
+      --bg-card:#0f172a;
+      --text-main:#f9fafb;
+      --text-muted:#9ca3af;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #1d4ed8 0, #020617 40%, #000 100%);
+      color:var(--text-main);
+    }
+    .page {
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    header {
+      padding:18px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      max-width:1120px;
+      margin:0 auto;
+    }
+    .logo {
+      font-weight:700;
+      letter-spacing:0.04em;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .logo-mark {
+      width:26px;
+      height:26px;
+      border-radius:8px;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+    }
+    .tag-beta {
+      font-size:12px;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.4);
+      color:var(--text-muted);
+    }
+    .hero {
+      max-width:1120px;
+      margin:0 auto;
+      padding:32px 24px 56px;
+      display:flex;
+      gap:32px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .hero-text {
+      flex:1 1 320px;
+    }
+    .hero-kicker {
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:0.16em;
+      color:var(--accent);
+      margin-bottom:8px;
+    }
+    .hero h1 {
+      font-size:2.4rem;
+      line-height:1.15;
+      margin:0 0 12px;
+    }
+    .hero-sub {
+      font-size:1.02rem;
+      color:var(--text-muted);
+      margin-bottom:18px;
+    }
+    .hero-badges {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:20px;
+    }
+    .badge {
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,0.5);
+      color:var(--text-muted);
+    }
+    .badge.highlight {
+      border:none;
+      background:rgba(16,185,129,0.12);
+      color:var(--accent);
+    }
+    .hero-cta-main {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+    .btn-primary {
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:white;
+      border:none;
+      padding:12px 22px;
+      border-radius:999px;
+      font-size:0.98rem;
+      font-weight:600;
+      cursor:pointer;
+      box-shadow:0 12px 30px rgba(37,99,235,0.35);
+    }
+    .hero-note {
+      font-size:12px;
+      color:var(--text-muted);
+    }
+    .hero-visual {
+      flex:1 1 320px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .mockup-card {
+      background:rgba(15,23,42,0.95);
+      border-radius:18px;
+      padding:20px 20px 18px;
+      box-shadow:0 18px 45px rgba(15,23,42,0.85);
+      border:1px solid rgba(148,163,184,0.35);
+    }
+    .mockup-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:10px;
+      font-size:13px;
+      color:var(--text-muted);
+    }
+    .mockup-body {
+      background:radial-gradient(circle at top,#1e293b 0,#020617 65%);
+      border-radius:14px;
+      padding:18px;
+      display:grid;
+      grid-template-columns:1.1fr 1fr;
+      gap:14px;
+      align-items:center;
+    }
+    .machine-block {
+      border-radius:12px;
+      background:linear-gradient(135deg,#1d4ed8,#22c55e);
+      height:150px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:600;
+      font-size:0.95rem;
+      text-align:center;
+    }
+    .mockup-list {
+      font-size:12px;
+      color:var(--text-muted);
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .mockup-pill {
+      padding:6px 9px;
+      border-radius:999px;
+      background:rgba(15,23,42,0.9);
+      border:1px solid rgba(148,163,184,0.4);
+      font-size:11px;
+    }
+    .section {
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 24px 40px;
+    }
+    .section h2 {
+      font-size:1.5rem;
+      margin-bottom:6px;
+    }
+    .section > p {
+      margin-top:0;
+      color:var(--text-muted);
+      font-size:0.98rem;
+    }
+    .benefits-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      gap:18px;
+      margin-top:22px;
+    }
+    .benefit-box {
+      background:rgba(15,23,42,0.96);
+      border-radius:16px;
+      padding:18px 16px;
+      border:1px solid rgba(148,163,184,0.35);
+      font-size:0.96rem;
+    }
+    .benefit-label {
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.14em;
+      color:var(--accent);
+      margin-bottom:6px;
+    }
+    .cta-card {
+      margin-top:30px;
+      background:linear-gradient(135deg,#020617,#020617 40%,#0b1220 100%);
+      border-radius:18px;
+      padding:26px 20px 24px;
+      border:1px solid rgba(148,163,184,0.45);
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+      gap:24px;
+      align-items:flex-start;
+    }
+    .cta-card h3 {
+      margin:0 0 8px;
+      font-size:1.25rem;
+    }
+    .cta-card p { margin:0; color:var(--text-muted); font-size:0.95rem; }
+    .cta-chip-row {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:10px 0 16px;
+    }
+    .cta-chip {
+      font-size:11px;
+      padding:4px 9px;
+      border-radius:999px;
+      background:rgba(15,23,42,0.95);
+      border:1px solid rgba(148,163,184,0.4);
+      color:var(--text-muted);
+    }
+    form {
+      display:grid;
+      gap:10px;
+    }
+    input, select {
+      padding:11px 12px;
+      border-radius:10px;
+      border:1px solid rgba(148,163,184,0.6);
+      background:rgba(15,23,42,0.96);
+      color:var(--text-main);
+      font-size:0.95rem;
+    }
+    input::placeholder { color:#6b7280; }
+    select { appearance:none; }
+    .helper-text {
+      font-size:11px;
+      color:var(--text-muted);
+      margin-top:4px;
+      text-align:right;
+    }
+    .footer {
+      max-width:1120px;
+      margin:0 auto 18px;
+      padding:0 24px;
+      font-size:11px;
+      color:#6b7280;
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:6px;
+    }
+    @media (max-width:768px) {
+      header { padding:16px 18px; }
+      .hero {
+        padding:18px 18px 32px;
+      }
+      .hero h1 {
+        font-size:1.8rem;
+      }
+      .mockup-body {
+        grid-template-columns:1fr;
+      }
+      .cta-card {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="logo">
+      <div class="logo-mark">PE</div>
+      <span>ProClean Express</span>
+    </div>
+    <div class="tag-beta">Fase Beta · Validação de Interesse</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-kicker">Locação de extratora profissional</div>
+      <h1>Comece a limpar estofados <br/>sem comprar uma máquina de R$ 10.000.</h1>
+      <p class="hero-sub">Alugue a extratora profissional EA262 com seguro incluso e teste o serviço antes de investir pesado em equipamento.</p>
+
+      <div class="hero-badges">
+        <div class="badge highlight">Apenas para diaristas, MEI e pequenos prestadores</div>
+        <div class="badge">Preço estimado: R$ 90 / dia (mercado: ~R$ 110)</div>
+      </div>
+
+      <div class="hero-cta-main">
+        <button class="btn-primary">Quero participar da fase Beta</button>
+        <span class="hero-note">Sem compromisso · Usamos seu cadastro apenas para contato sobre o aluguel</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="mockup-card">
+        <div class="mockup-header">
+          <span>Extratora EA262 · Profissional</span>
+          <span>IPC Brasil</span>
+        </div>
+        <div class="mockup-body">
+          <div class="machine-block">Área visual do equipamento / foto real</div>
+          <div class="mockup-list">
+            <div class="mockup-pill">Ganhos por dia: R$ 400–800* em serviços</div>
+            <div class="mockup-pill">Aluguel estimado: R$ 90 / dia</div>
+            <div class="mockup-pill">Seguro incluso contra furto e avarias</div>
+            <span style="font-size:10px; margin-top:4px;">*Valores aproximados, variam por cidade e tipo de cliente.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Você está deixando dinheiro na mesa por falta do equipamento certo?</h2>
+    <p>Diaristas e prestadores relatam que perdem pedidos de limpeza de estofados porque não possuem extratora própria ou não querem se arriscar em um investimento alto. A ProClean Express existe para você testar esse serviço com risco reduzido.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-box">
+        <div class="benefit-label">Baixo investimento</div>
+        <strong>Ofereça um serviço premium sem comprar a máquina.</strong>
+        <p>Comece a vender limpeza de estofados imediatamente, usando um equipamento profissional que custaria cerca de R$ 10.000.</p>
+      </div>
+      <div class="benefit-box">
+        <div class="benefit-label">Renda extra</div>
+        <strong>Aumente o ticket de cada cliente.</strong>
+        <p>Inclua o serviço de estofados na sua visita e cobre a mais por sofá, poltrona e colchão, sem travar seu fluxo de caixa.</p>
+      </div>
+      <div class="benefit-box">
+        <div class="benefit-label">Tranquilidade</div>
+        <strong>Seguro incluído no aluguel.</strong>
+        <p>Furto ou avaria do equipamento são riscos cobertos pelo seguro incluso, para você trabalhar com mais segurança.</p>
+      </div>
+      <div class="benefit-box">
+        <div class="benefit-label">Validação</div>
+        <strong>Teste a demanda antes de investir.</strong>
+        <p>Use a fase Beta para entender se compensa comprar sua própria máquina no futuro.</p>
+      </div>
+    </div>
+
+    <div class="cta-card">
+      <div>
+        <h3>Pré-cadastro de interesse · Beta Testers</h3>
+        <p>Estamos mapeando prestadores de serviço que queiram <strong>alugar a extratora EA262</strong> quando o serviço for lançado. O objetivo aqui é apenas entender a demanda real.</p>
+        <div class="cta-chip-row">
+          <div class="cta-chip">Vagas limitadas para a primeira turma</div>
+          <div class="cta-chip">Sem cobrança agora</div>
+          <div class="cta-chip">Contato exclusivo por WhatsApp</div>
+        </div>
+        <p>Se você tem interesse real em oferecer limpeza de estofados na sua cidade, deixe seus dados abaixo.</p>
+      </div>
+      <div>
+        <form>
+          <input type="text" placeholder="Nome completo" />
+          <input type="text" placeholder="WhatsApp (com DDD)" />
+          <input type="text" placeholder="Cidade / Estado" />
+          <select>
+            <option value="">Você já faz limpeza de estofados?</option>
+            <option>Sim, já ofereço esse serviço</option>
+            <option>Ainda não, mas quero começar</option>
+          </select>
+          <select>
+            <option value="">Quantos serviços de estofados você pretende fazer por mês?</option>
+            <option>0–2</option>
+            <option>3–5</option>
+            <option>6 ou mais</option>
+          </select>
+          <button type="submit" class="btn-primary">Tenho interesse em alugar</button>
+          <div class="helper-text">Você está apenas registrando interesse. Nenhum pagamento será solicitado nesta etapa.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <span>ProClean Express · Projeto piloto de validação de locação de extratora profissional.</span>
+    <span>Os valores e condições apresentados são estimativas e podem mudar na versão final do serviço.</span>
+  </div>
+</div>
+</body>
+</html>
