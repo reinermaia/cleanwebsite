@@ -149,27 +149,29 @@
       color:var(--text-muted);
     }
     .mockup-body {
-      background:radial-gradient(circle at top,#1e293b 0,#020617 65%);
-      border-radius:18px;
-      padding:22px;
-      display:grid;
-      grid-template-columns:1.4fr 1fr; /* mais espaço para a imagem */
-      gap:20px;
-      align-items:center;
-      min-height:400px; /* garante mais presença visual */
-    }
+    background:radial-gradient(circle at top,#1e293b 0,#020617 65%);
+    border-radius:18px;
+    padding:22px;
+    display:grid;
+    grid-template-columns:1fr;      /* apenas uma coluna */
+    justify-items:center;           /* centraliza o conteúdo */
+    align-items:center;
+    min-height:300px;
+  }
+
     .machine-block {
-      border-radius:12px;
-      background:linear-gradient(135deg,#1d4ed8,#22c55e);
-      height:260px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:600;
-      font-size:0.95rem;
-      text-align:center;
-      overflow:hidden; /* permite imagens maiores sem quebrar */
-    }
+    border-radius:14px;
+    background:linear-gradient(135deg,#1d4ed8,#22c55e);
+    height:300px;                   /* ajuste se quiser mais/menos */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+    font-size:0.95rem;
+    text-align:center;
+    overflow:hidden;
+  }
+
     .mockup-list {
       font-size:12px;
       color:var(--text-muted);
@@ -332,14 +334,8 @@
           <span>IPC Brasil</span>
         </div>
         <div class="mockup-body">
-          <div class="machine-block"><img src="images/extratora.jpg" alt="Extratora EA262" style="width:100%; height:auto; border-radius:12px;"></div>
-
-          <div class="mockup-list">
-            
-            <div class="mockup-pill">Aluguel estimado: R$ 90 / dia</div>
-            <div class="mockup-pill">Seguro incluso contra furto e avarias</div>
-            <span style="font-size:10px; margin-top:4px;">*Valores aproximados, variam por cidade e tipo de cliente.</span>
-          </div>
+          <div class="machine-block"><img src="images/extratora.jpg" alt="Extratora EA262" style="width:100%; height:auto; border-radius:12px;"></div>   
+        </div>
         </div>
       </div>
     </div>
