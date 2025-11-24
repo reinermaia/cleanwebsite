@@ -316,7 +316,9 @@
       </div>
 
       <div class="hero-cta-main">
-        <button class="btn-primary">Quero participar da fase Beta</button>
+        <button class="btn-primary" type="button" onclick="document.getElementById('form-interesse').scrollIntoView({behavior:'smooth'});">Quero participar da fase Beta
+        </button>
+
         <span class="hero-note">Sem compromisso · Usamos seu cadastro apenas para contato sobre o aluguel</span>
       </div>
     </div>
@@ -379,24 +381,33 @@
         <p>Se você tem interesse real em oferecer limpeza de estofados na sua cidade, deixe seus dados abaixo.</p>
       </div>
       <div>
-        <form>
-          <input type="text" placeholder="Nome completo" />
-          <input type="text" placeholder="WhatsApp (com DDD)" />
-          <input type="text" placeholder="Cidade / Estado" />
-          <select>
-            <option value="">Você já faz limpeza de estofados?</option>
-            <option>Sim, já ofereço esse serviço</option>
-            <option>Ainda não, mas quero começar</option>
-          </select>
-          <select>
-            <option value="">Quantos serviços de estofados você pretende fazer por mês?</option>
-            <option>0–2</option>
-            <option>3–5</option>
-            <option>6 ou mais</option>
-          </select>
-          <button type="submit" class="btn-primary">Tenho interesse em alugar</button>
-          <div class="helper-text">Você está apenas registrando interesse. Nenhum pagamento será solicitado nesta etapa.</div>
-        </form>
+        <form id="form-interesse"
+      action="reiner9gmail.com"
+      method="POST">
+  <input type="hidden" name="_subject" value="Novo lead - ProClean Express" />
+  <input type="hidden" name="_template" value="table" />
+
+  <input type="text" name="nome" placeholder="Nome completo" required />
+  <input type="text" name="whatsapp" placeholder="WhatsApp (com DDD)" required />
+  <input type="text" name="cidade" placeholder="Cidade / Estado" required />
+
+  <select name="faz_limpeza" required>
+    <option value="">Você já faz limpeza de estofados?</option>
+    <option>Sim, já ofereço esse serviço</option>
+    <option>Ainda não, mas quero começar</option>
+  </select>
+
+  <select name="servicos_mes" required>
+    <option value="">Quantos serviços de estofados você pretende fazer por mês?</option>
+    <option>0–2</option>
+    <option>3–5</option>
+    <option>6 ou mais</option>
+  </select>
+
+  <button type="submit" class="btn-primary">Tenho interesse em alugar</button>
+  <div class="helper-text">Você está apenas registrando interesse. Nenhum pagamento será solicitado nesta etapa.</div>
+</form>
+
       </div>
     </div>
   </section>
@@ -408,3 +419,4 @@
 </div>
 </body>
 </html>
+
